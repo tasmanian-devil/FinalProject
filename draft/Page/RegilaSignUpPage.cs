@@ -1,9 +1,4 @@
 ﻿/* 2021-04-12 Ingrida Kudeliovė
- * 4 Case: Use of filters:
-     * Open a pop-up modal
-     * Find the filter attribute
-     * Search for or type the desired value
-     * Apply and close the modal
 */
 using draft.Page;
 using NUnit.Framework;
