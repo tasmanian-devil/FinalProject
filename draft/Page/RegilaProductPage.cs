@@ -1,6 +1,4 @@
 ﻿/* 2021-04-12 Ingrida Kudeliovė
- * 3 Case: Produkto įdėjimas į krepšelį:Nuorodos atidarymas, produkto aprašymas roleto ilgį apibūdinant cm, 
-    64x68x120, valdymas kairėje, 2 vnt., pridėjimas į krepšelį, žinutės vertinimas moduliniame lange.
 */
 
 using NUnit.Framework;
@@ -63,7 +61,7 @@ namespace draft.Page
             Assert.IsTrue(_afterSuccessfulInputNewsletterMessage.Contains(_newsletterAlert.Text), $"Failed, expected result was {_afterSuccessfulInputNewsletterMessage}, but actual result was {_newsletterAlert.Text}");
             return this;
         }
-        // +2 Case: Šis el.pašto adresas jau registruotas - naudojami tie patys duomenys.
+        // +2 Case: Naudoti ankstesnius metodus + sia. Šis el.pašto adresas jau registruotas - naudojami tie patys duomenys.
 
         public RegilaProductPage AssertOrderNewsletterWithTheSameEMailFeedback()
 
@@ -73,7 +71,7 @@ namespace draft.Page
             return this;
         }
 
-
+        //Describe and add product:
         public RegilaProductPage CheckMeasureCMBox(bool selected)
         {
             if (selected != _measureUnitCM.Selected)
@@ -141,7 +139,7 @@ namespace draft.Page
         public RegilaProductPage CheckIfProductAddedToChart()
         {
             Thread.Sleep(2000);
-            Assert.IsTrue(_resultBox.Text.Contains(_productAddedToChartMessage), $"Failed, expected result was {_productAddedToChartMessage}, but actual result was {_resultBox.Text}");
+            Assert.IsTrue(_productAddedToChartMessage.Contains(_resultBox.Text), $"Failed, expected result was {_productAddedToChartMessage}, but actual result was {_resultBox.Text}");
             return this;
         }
       
