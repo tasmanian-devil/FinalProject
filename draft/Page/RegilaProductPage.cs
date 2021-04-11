@@ -21,8 +21,7 @@ namespace draft.Page
         private IWebElement _orderNewsletterButton => Driver.FindElement(By.Name("submitNewsletter"));
         private IWebElement _newsletterAlert => Driver.FindElement(By.CssSelector(".alert"));
         
-        private IWebElement _measureUnitCM => Driver.FindElement(By.CssSelector(".input-container:nth-child(2) > " +
-            ".custom-control-label"));
+        private IWebElement _measureUnitCM => Driver.FindElement(By.CssSelector("#measure-unit-cm"));
         private IWebElement _resultBox => Driver.FindElement(By.XPath("//h3[contains(.,'Prekė sėkmingai pridėta į krepšelį')]"));
         private IWebElement _medziagosPlotisInput => Driver.FindElement(By.Name("textField167"));
         private IWebElement _gaminioPlotisInput => Driver.FindElement(By.Name("textField168"));
