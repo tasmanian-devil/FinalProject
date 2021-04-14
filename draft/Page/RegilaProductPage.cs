@@ -1,6 +1,7 @@
 ﻿/* 2021-04-12 Ingrida Kudeliovė
 */
 
+
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -20,8 +21,10 @@ namespace draft.Page
 
         private IWebElement _orderNewsletterButton => Driver.FindElement(By.Name("submitNewsletter"));
         private IWebElement _newsletterAlert => Driver.FindElement(By.CssSelector(".alert"));
-        
-        private IWebElement _measureUnitCM => Driver.FindElement(By.CssSelector("#measure-unit-cm"));
+
+        private IWebElement _measureUnitCM => Driver.FindElement(By.XPath("//label[contains(.,'cm')]"));
+
+
         private IWebElement _resultBox => Driver.FindElement(By.XPath("//h3[contains(.,'Prekė sėkmingai pridėta į krepšelį')]"));
         private IWebElement _medziagosPlotisInput => Driver.FindElement(By.Name("textField167"));
         private IWebElement _gaminioPlotisInput => Driver.FindElement(By.Name("textField168"));
@@ -30,7 +33,7 @@ namespace draft.Page
         private IWebElement _desineValdymoPuse => Driver.FindElement(By.XPath("//label[contains(.,'Dešinė')]"));
         private IWebElement _kiekis => Driver.FindElement(By.Id("quantity_wanted"));
         private IWebElement _addToChartButton => Driver.FindElement(By.CssSelector("#add-to-cart-or-refresh > div.product-add-to-cart > div > div.add.col > button"));//By.XPath("//button[@type='submit']")
-        
+
         public RegilaProductPage(IWebDriver webdriver) : base(webdriver) { }
 
         public RegilaProductPage NavigateToPage()
@@ -74,7 +77,9 @@ namespace draft.Page
         public RegilaProductPage CheckMeasureCMBox(bool selected)
         {
             if (selected != _measureUnitCM.Selected)
+            {
                 _measureUnitCM.Click();
+            }
             return this;
         }
 
@@ -102,14 +107,9 @@ namespace draft.Page
         public RegilaProductPage CheckKaireValdymoPuse(bool selected)
         {
 
-            if (selected != _kaireValdymoPuse.Selected)
+            if (selected == _desineValdymoPuse.Selected)
             {
                 _kaireValdymoPuse.Click();
-            }
-            else
-            {
-                _desineValdymoPuse.Click(); 
-               
             }
             return this;
         }
@@ -130,7 +130,7 @@ namespace draft.Page
 
         public RegilaProductPage ClickAddToChartButton()
         {
-            
+
             _addToChartButton.Click();
             return this;
         }
@@ -141,6 +141,7 @@ namespace draft.Page
             Assert.IsTrue(_productAddedToChartMessage.Contains(_resultBox.Text), $"Failed, expected result was {_productAddedToChartMessage}, but actual result was {_resultBox.Text}");
             return this;
         }
-      
+
     }
 }
+
