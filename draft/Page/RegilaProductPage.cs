@@ -1,4 +1,4 @@
-﻿/* 2021-04-12 Ingrida Kudeliovė
+﻿/* 2021-04-12 made by Ingrida.
 */
 
 
