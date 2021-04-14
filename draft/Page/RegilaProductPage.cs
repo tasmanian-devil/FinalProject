@@ -138,7 +138,7 @@ namespace draft.Page
         public RegilaProductPage CheckIfProductAddedToChart()
         {
             Thread.Sleep(2000);
-            Assert.IsTrue(_productAddedToChartMessage.Contains(_resultBox.Text), $"Failed, expected result was {_productAddedToChartMessage}, but actual result was {_resultBox.Text}");
+            Assert.IsTrue(_resultBox.Text.Contains(_productAddedToChartMessage), $"Failed, expected result was {_resultBox.Text}, but actual result was {_productAddedToChartMessage}");
             return this;
         }
 
