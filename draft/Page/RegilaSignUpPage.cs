@@ -33,7 +33,7 @@ namespace IKFinalProjectVCS.Page
         }
         public RegilaSignUpPage VerifyNameDetailsRequiredFeedbackMessage()
         {
-            Thread.Sleep(2000);
+            GetWait(5); 
             Assert.IsTrue(_feedbackMessageEntryRequired.Contains(_FeedbackNameRequiredMessage.Text));
             return this;
         }
