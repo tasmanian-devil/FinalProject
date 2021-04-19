@@ -14,8 +14,8 @@ namespace IKFinalProjectVCS.Test
         public static void PressSignUpButtonWithEmptyInputFieldsTest()
         {
             _signUpPage.NavigateToPage()
-                .PressSignUpButton();
-                //.VerifyNameDetailsRequiredFeedbackMessage();
+                .PressSignUpButton()
+                .VerifyNameDetailsRequiredFeedbackMessage();
         }
     } 
 }
