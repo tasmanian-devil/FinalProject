@@ -45,14 +45,14 @@ namespace draft.Page
         }
         public RegilaProductPage AssertOrderNewsletterSuccessFeedback()
         {
-            Thread.Sleep(2000);
-            Assert.IsTrue(_afterSuccessfulInputNewsletterMessage.Contains(_newsletterAlert.Text), $"Failed, expected result was {_afterSuccessfulInputNewsletterMessage}, but actual result was {_newsletterAlert.Text}");
+            GetWait(5); 
+            Assert.IsTrue(_afterSuccessfulInputNewsletterMessage.Contains(_newsletterAlert.Text));
             return this;
         }
         public RegilaProductPage AssertOrderNewsletterWithTheSameEMailFeedback()
         {
-            Thread.Sleep(2000);
-            Assert.IsTrue(_emailAlreadyRegisteredToGetNewsletterMessage.Contains(_newsletterAlert.Text), $"Failed, expected result was {_emailAlreadyRegisteredToGetNewsletterMessage}, but actual result was {_newsletterAlert.Text}");
+            GetWait(5); 
+            Assert.IsTrue(_emailAlreadyRegisteredToGetNewsletterMessage.Contains(_newsletterAlert.Text));
             return this;
         }
         public RegilaProductPage CheckMeasureCMBox(bool selected)
@@ -111,8 +111,8 @@ namespace draft.Page
         }
         public RegilaProductPage CheckIfProductAddedToChart()
         {
-            Thread.Sleep(2000);
-            Assert.IsTrue(_resultBox.Text.Contains(_productAddedToChartMessage), $"Failed, expected result was {_resultBox.Text}, but actual result was {_productAddedToChartMessage}");
+            GetWait(5); 
+            Assert.IsTrue(_resultBox.Text.Contains(_productAddedToChartMessage));
             return this;
         }
     }
