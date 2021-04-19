@@ -24,7 +24,7 @@ namespace draft.Page
         private IWebElement _kaireValdymoPuse => Driver.FindElement(By.XPath("//label[contains(.,'Kairė')]"));
         private IWebElement _desineValdymoPuse => Driver.FindElement(By.XPath("//label[contains(.,'Dešinė')]"));
         private IWebElement _kiekis => Driver.FindElement(By.Id("quantity_wanted"));
-        private IWebElement _addToChartButton => Driver.FindElement(By.CssSelector("#add-to-cart-or-refresh > div.product-add-to-cart > div > div.add.col > button"));//By.XPath("//button[@type='submit']")
+        private IWebElement _addToChartButton => Driver.FindElement(By.CssSelector("#add-to-cart-or-refresh > div.product-add-to-cart > div > div.add.col > button"));
         public RegilaProductPage(IWebDriver webdriver) : base(webdriver) { }
         public RegilaProductPage NavigateToPage()
         {
