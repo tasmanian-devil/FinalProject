@@ -1,5 +1,3 @@
-﻿
-
 using NUnit.Framework;
 
 namespace draft.Test
@@ -14,7 +12,6 @@ namespace draft.Test
                 .InsertEmailToOrderNewsletter(email)
                 .ClickOrderNewsletterButton()
                 .AssertOrderNewsletterSuccessFeedback();
-
         }
         [Order(2)]
         [TestCase("test2@test.com", TestName = "Newsletter already been ordered feedback")]
@@ -26,10 +23,8 @@ namespace draft.Test
                 .AssertOrderNewsletterWithTheSameEMailFeedback();
 
         }
-       
-        [TestCase(true, "64", "68", "120", true, "2", TestName ="Baltu roletu apibudinimas ir pridejimas i krepseli")]
-       
-        public static void SingleCheckBoxTest(bool measure, string mPlotis, string gPlotis, string aukstis, bool valdymas, string kiekis)
+       [TestCase(true, "64", "68", "120", true, "2", TestName ="Baltu roletu apibudinimas ir pridejimas i krepseli")]
+       public static void SingleCheckBoxTest(bool measure, string mPlotis, string gPlotis, string aukstis, bool valdymas, string kiekis)
         {
             _page.NavigateToPage()
                 .CheckMeasureCMBox(measure)
