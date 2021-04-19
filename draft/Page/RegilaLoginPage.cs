@@ -28,7 +28,6 @@ namespace IKFinalProjectVCS.Page
                 Driver.Url = PageAddress;
             return this;
         }
-
         public RegilaLoginPage InsertEmail(string email) 
         {
             _emailInput.Clear();
