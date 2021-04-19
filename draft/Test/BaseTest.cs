@@ -1,5 +1,3 @@
-﻿
-
 using draft.Drivers;
 using draft.Page;
 using draft.Tools;
@@ -26,14 +24,12 @@ namespace draft.Test
             _signUpPage = new RegilaSignUpPage(driver);
             _loginPage = new RegilaLoginPage(driver);
         }
-
         [TearDown]
         public static void TakeScreeshot()
         {
             if (TestContext.CurrentContext.Result.Outcome != ResultState.Success)
                 MyScreenshot.MakeScreeshot(driver);
         }
-
         [OneTimeTearDown]
         public static void TearDown()
         {
