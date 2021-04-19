@@ -1,8 +1,3 @@
-﻿
-/* 2021-04-12 Ingrida Kudeliovė
- * 1-2 Case: Naujienlaiškio užsakymas.using draft.Page;
- */
-
 using draft.Page;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -57,12 +52,5 @@ namespace IKFinalProjectVCS.Page
             Assert.IsTrue(_wrongDetailsEntered.Contains(_FeedbackMessage.Text), $"Failed, expected result was {_wrongDetailsEntered}, but actual result was {_FeedbackMessage.Text}");
             return this;
         }
-
-        
-
-
-
-
-
     }
 }
