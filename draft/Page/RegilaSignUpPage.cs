@@ -1,5 +1,3 @@
-﻿/* 2021-04-12 Ingrida Kudeliovė
-*/
 using draft.Page;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -21,26 +19,23 @@ namespace IKFinalProjectVCS.Page
         private IWebElement _FeedbackNameRequiredMessage => Driver.FindElement(By.CssSelector("#customer-form > section > div:nth-child(2) > div")); 
         
         public RegilaSignUpPage(IWebDriver webdriver) : base(webdriver) { }
-
+       
         public RegilaSignUpPage NavigateToPage()
         {
             if (Driver.Url != PageAddress)
                 Driver.Url = PageAddress;
             return this;
         }
-
         public RegilaSignUpPage PressSignUpButton()
         {
             _submitButton.Click();
             return this;
         }
-        
         public RegilaSignUpPage VerifyNameDetailsRequiredFeedbackMessage()
         {
             Thread.Sleep(2000);
             Assert.IsTrue(_feedbackMessageEntryRequired.Contains(_FeedbackNameRequiredMessage.Text));
             return this;
         }
-
     }
 }
