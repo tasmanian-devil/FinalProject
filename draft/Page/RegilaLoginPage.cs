@@ -48,8 +48,8 @@ namespace IKFinalProjectVCS.Page
         }
         public RegilaLoginPage VerifyWrongDetailsFeedbackMessage() 
         {
-            Thread.Sleep(2000);
-            Assert.IsTrue(_wrongDetailsEntered.Contains(_FeedbackMessage.Text), $"Failed, expected result was {_wrongDetailsEntered}, but actual result was {_FeedbackMessage.Text}");
+            GetWait(5); 
+            Assert.IsTrue(_wrongDetailsEntered.Contains(_FeedbackMessage.Text));
             return this;
         }
     }
